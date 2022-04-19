@@ -1,0 +1,257 @@
+:root {
+  --blue: hsl(246, 80%, 60%);
+  --light-red-work: hsl(15, 100%, 70%);
+  --soft-blue: hsl(195, 74%, 62%);
+  --light-red-study: hsl(348, 100%, 68%);
+  --lime-green: hsl(145, 58%, 55%);
+  --violet: hsl(264, 64%, 52%);
+  --soft-orange: hsl(43, 84%, 65%);
+
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+figure,
+p,
+blockquote,
+dl,
+dd {
+  margin: 0
+}
+
+body {
+  min-height: 100vh;
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+  background-color: var(--very-dark-blue);
+}
+
+.current {
+  color: white;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.dashboard {
+  display: grid;
+  margin: auto;
+  grid-template-rows: [row1-start] 13em [row1-end row2-start] 13em [row2-end];
+  grid-template-columns: repeat(4, 13em);
+  gap: 1em;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-bottom: 1em;
+}
+
+.card {
+  display: block;
+  border-radius: 1em;
+  padding: 1em;
+  padding-bottom: 1.8em;
+  padding-left: 1.8em;
+  background-color: var(--dark-blue);
+  color: white;
+  z-index: 0;
+  flex-basis: 73%;
+  height: 8em;
+  margin-bottom: -1em;
+
+}
+
+.ellipsis {
+  position: relative;
+  float: right;
+  top: 0.3em;
+  width: 1.3em;
+  height: 0.3em;
+}
+
+.card > h2 {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.hours {
+  display: block;
+  font-size: 3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.1em;
+  font-weight: 300;
+}
+
+.prev {
+  color: var(--pale-blue);
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.card-background {
+  display: block;
+  background-color: red;
+  margin-bottom: -1em;
+  flex-grow: 1;
+  border-radius: 1em 1em 0 0;
+  flex-basis: 27%;
+  flex-shrink: 0;
+}
+
+#bg-work {
+  background-color: var(--light-red-work);
+  overflow: hidden;
+}
+
+#bg-play {
+  background-color: var(--soft-blue);
+  overflow: hidden;
+}
+
+#bg-study {
+  background-color: var(--light-red-study);
+  overflow: hidden;
+}
+
+#bg-exercise {
+  background-color: var(--lime-green);
+  overflow: hidden;
+}
+
+#bg-social {
+  background-color: var(--violet);
+  overflow: hidden;
+}
+
+#bg-selfcare {
+  background-color: var(--soft-orange);
+  overflow: hidden;
+}
+
+#work-img {
+  height: 4em;
+  width: 4em;
+  display: block;
+  position: relative;
+  top: 0.5em;
+  margin-top: -1em;
+  left: 8em;
+}
+
+#play-img {
+  height: 4em;
+  width: 4em;
+  display: block;
+  position: relative;
+  top: 0.5em;
+  margin-top: -1em;
+  left: 8em;
+}
+
+#study-img {
+  height: 4em;
+  width: 4em;
+  display: block;
+  position: relative;
+  top: 0.5em;
+  margin-top: -1em;
+  left: 8em;
+}
+
+#exercise-img {
+  height: 2.5em;
+  width: 4em;
+  display: block;
+  position: relative;
+  top: 1em;
+  margin-top: -1em;
+  left: 8em;
+}
+
+#social-img {
+  height: 4.5em;
+  width: 4.5em;
+  display: block;
+  position: relative;
+  top: 0.5em;
+  margin-top: -1em;
+  left: 8em;
+}
+
+#selfcare-img {
+  height: 4em;
+  width: 4em;
+  display: block;
+  position: relative;
+  top: 0em;
+  margin-top: -1em;
+  left: 8em;
+}
+
+#card1 {
+  display: flex;
+  flex-direction: column;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  border-radius: 1rem;
+  background-color: var(--dark-blue);
+  color: white;
+}
+
+.top-card {
+  border-radius: 1rem 1rem 1rem 1rem;
+  background-color: var(--blue);
+  padding: 1em;
+  padding-bottom: 3em;
+  flex-grow: 1;
+}
+
+.top-card > img {
+  border: .2em solid white;
+  border-radius: 5em;
+  height: 4em;
+}
+
+.top-card-content {
+  margin-left: 1em;
+  margin-top: 1em;
+}
+
+.top-card-content > h1 {
+  line-height: 1.2em;
+  font-weight: 300;
+}
+
+.top-card-content > h4 {
+  font-size: .8em;
+  font-weight: 300;
+  color: var(--pale-blue);
+}
+
+.bottom-card {
+  padding: 1em;
+  line-height: 1.5em;
+  flex-grow: 1;
+}
+
+.bottom-card > p {
+  display: block;
+  float: left;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  width: 10em;
+  color: var(--pale-blue);
+}
