@@ -33,10 +33,6 @@ body {
   background-color: var(--very-dark-blue);
 }
 
-.current {
-  color: white;
-}
-
 .dashboard-container {
   display: flex;
   flex-direction: row;
@@ -50,6 +46,13 @@ body {
   grid-template-rows: [row1-start] 13em [row1-end row2-start] 13em [row2-end];
   grid-template-columns: repeat(4, 13em);
   gap: 1em;
+}
+
+@media only screen and (max-width: 375px) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .card-container {
@@ -71,7 +74,11 @@ body {
   flex-basis: 73%;
   height: 8em;
   margin-bottom: -1em;
+  cursor: pointer;
+}
 
+.card:hover {
+  background-color: var(--desaturated-blue);
 }
 
 .ellipsis {
@@ -85,6 +92,8 @@ body {
 .card > h2 {
   font-size: 1em;
   font-weight: 500;
+  opacity: 0.9;
+  width: 5em;
 }
 
 .hours {
@@ -93,12 +102,27 @@ body {
   padding-top: 0.5em;
   padding-bottom: 0.1em;
   font-weight: 300;
+  opacity: 0.9;
 }
 
 .prev {
   color: var(--pale-blue);
   font-size: 0.8em;
   font-weight: 400;
+  opacity: 0.9;
+}
+
+@media only screen and (max-width: 375px) {
+  .hours {
+    font-size: 2em;
+    float: left;
+  }
+
+  .prev {
+    float: right;
+    position: relative;
+    top: 2.5em;
+  }
 }
 
 .card-background {
@@ -109,6 +133,11 @@ body {
   border-radius: 1em 1em 0 0;
   flex-basis: 27%;
   flex-shrink: 0;
+}
+
+.ellipsis:hover {
+  filter: brightness(0) invert(1);
+  cursor: pointer;
 }
 
 #bg-work {
@@ -233,25 +262,122 @@ body {
 .top-card-content > h1 {
   line-height: 1.2em;
   font-weight: 300;
+  opacity: 0.9;
 }
 
 .top-card-content > h4 {
   font-size: .8em;
   font-weight: 300;
+  opacity: 0.9;
   color: var(--pale-blue);
+}
+
+@media only screen and (max-width: 375px) {
+  .top-card {
+    padding: 1.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .top-card > img {
+    float: left;
+    height: 3.5em;
+  }
+
+  .top-card-content {
+    float: left;
+  }
+
+  .top-card-content > h4 {
+    font-size: 0.8em;
+  }
+
+  .top-card-content > h1 {
+    font-size: 1.3em;
+  }
 }
 
 .bottom-card {
   padding: 1em;
   line-height: 1.5em;
   flex-grow: 1;
+  margin-bottom: -2em;
 }
 
-.bottom-card > p {
-  display: block;
+@media only screen and (max-width: 375px) {
+  .bottom-card {
+    margin-bottom: 0;
+    margin-left: 0.3em;
+  }
+}
+
+.buttons-list {
+  list-style-type: none;
+  padding: 0;
+  padding-right: 2em;
+  margin: 0;
+}
+
+@media only screen and (max-width: 375px) {
+  .buttons-list {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.buttons-list > button {
+  font-family: "Rubik";
+  font-weight: 300;
+  font-size: 1em;
   float: left;
   padding-left: 1em;
-  padding-top: 0.5em;
   width: 10em;
   color: var(--pale-blue);
+  border: 0;
+  background-color: var(--dark-blue);
+  appearance: none;
+  text-align: left;
+  box-sizing: border-box;
+  line-height: 2;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.buttons-list > button:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#dailybutton {
+  width: 4.5em;
+}
+
+#weeklybutton {
+  width: 5em;
+}
+
+#monthlybutton {
+  width: 5.5em;
+}
+
+@media only screen and (max-width: 375px) {
+  #dailybutton {
+    width: 4.5em;
+    flex-grow: 1;
+    flex-basis: min-content;
+  }
+
+  #weeklybutton {
+    width: 4.5em;
+    flex-grow: 1;
+    flex-basis: min-content;
+  }
+
+  #monthlybutton {
+    width: 4.5em;
+    flex-grow: 1;
+    flex-basis: min-content;
+  }
 }
